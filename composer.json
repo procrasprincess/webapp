@@ -57,7 +57,6 @@
         }
     },
     "require-dev": {
-        "laravel/homestead": "^8.2",
         "symfony/web-server-bundle": "4.2.*"
     }
 }
