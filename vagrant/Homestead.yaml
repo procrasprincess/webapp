@@ -1,0 +1,20 @@
+ip: 192.168.10.10
+memory: 2048
+cpus: 1
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: /home/andy/School/CS691/hotspots_webapp
+        to: /home/vagrant/code
+sites:
+    -
+        map: hotspots.local
+        to: /home/vagrant/code/public
+        type: symfony4
+databases:
+    - homestead
+name: hotspots-webapp
+hostname: hotspots-webapp
