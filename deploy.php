@@ -4,10 +4,11 @@ namespace Deployer;
 require 'recipe/symfony.php';
 
 // Project name
-set('application', 'my_project');
+set('application', 'hotspots');
 
 // Project repository
 set('repository', 'git@github.com:cs691projecthotspots/webapp.git');
+set('branch', 'master');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
@@ -19,26 +20,31 @@ add('shared_dirs', []);
 // Writable dirs by web server
 add('writable_dirs', []);
 
+set('http_user', 'www-data');
+set('deploy_path', '/var/www/html/hotspots');
+set('composer_options', 'install --no-dev --optimize-autoloader');
+
 // Hosts
-host('hotspots')
-    ->set('deploy_path', '/var/www/hotspots');
+host('hotspots-deploy');
 
 // Tasks
-task('build', function () {
-    run('cd {{release_path}} && build');
-});
+task('deploy', [
+    'deploy:prepare',
+    'deploy:lock',
+    'deploy:release',
+    'deploy:update_code',
+    'deploy:shared',
+    'deploy:writable',
+    'deploy:vendors',
+    'deploy:clear_paths',
+    'deploy:symlink',
+    'deploy:unlock',
+    'cleanup',
+    'success'
+]);
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
 
-// Migrate database before symlink new release.
-before('deploy:symlink', 'database:migrate');
-
-task('test', function() {
-    writeln('Hello world!');
-});
-
-task('pwd', function() {
-    $result = run('pwd');
-    writeln("Current Dir: $result");
-});
+// // Migrate database before symlink new release.
+// before('deploy:symlink', 'database:migrate');
