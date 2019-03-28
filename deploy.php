@@ -18,9 +18,12 @@ add('shared_files', []);
 add('shared_dirs', []);
 
 // Writable dirs by web server
-add('writable_dirs', []);
+add('writable_dirs', [
+    '/var/www/html/hotspots/current/public'
+]);
 
 set('http_user', 'www-data');
+set('keep_releases', 10);
 set('deploy_path', '/var/www/html/hotspots');
 set('composer_options', 'install --no-dev --optimize-autoloader');
 
@@ -34,10 +37,10 @@ task('deploy', [
     'deploy:release',
     'deploy:update_code',
     'deploy:shared',
-    'deploy:writable',
     'deploy:vendors',
     'deploy:clear_paths',
     'deploy:symlink',
+    'deploy:writable',
     'deploy:unlock',
     'cleanup',
     'success'
