@@ -5,9 +5,9 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HomePageController extends AbstractController
+class PageController extends AbstractController
 {
-    public function show() {
+    public function homepage() {
         return $this->render('home.html.twig');
     }
 }
