@@ -1,0 +1,27 @@
+{
+  "name": "hotspots",
+  "version": "1.0.0",
+  "description": "Hotspots web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cs691projecthotspots/webapp.git"
+  },
+  "keywords": [
+    "pace",
+    "php",
+    "symfony4"
+  ],
+  "author": "Andrew \"ChexWarrior\" Lehman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cs691projecthotspots/webapp/issues"
+  },
+  "homepage": "https://github.com/cs691projecthotspots/webapp#readme",
+  "dependencies": {
+    "bulma": "^0.7.4"
+  }
+}
