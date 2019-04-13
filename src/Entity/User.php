@@ -178,12 +178,12 @@ class User
         return $this;
     }
 
-    public function getLatitude(): ?string
+    public function getLatitude(): ?float
     {
         return $this->latitude;
     }
 
-    public function setLatitude(string $latitude): self
+    public function setLatitude(float $latitude): self
     {
         $this->latitude = $latitude;
 
