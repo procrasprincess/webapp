@@ -71,6 +71,11 @@ class User
      */
     private $longitude;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Business", mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $business;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -190,6 +195,23 @@ class User
     public function setLongitude(?float $longitude): self
     {
         $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    public function getBusiness(): ?Business
+    {
+        return $this->business;
+    }
+
+    public function setBusiness(Business $business): self
+    {
+        $this->business = $business;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $business->getUser()) {
+            $business->setUser($this);
+        }
 
         return $this;
     }
