@@ -5,9 +5,12 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BusinessRepository")
+ * @UniqueEntity("taxId")
+ * @UniqueEntity("name")
  */
 class Business
 {
@@ -25,7 +28,7 @@ class Business
      * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="business", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
-    private $User;
+    private $user;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -94,12 +97,12 @@ class Business
 
     public function getUser(): ?User
     {
-        return $this->User;
+        return $this->user;
     }
 
-    public function setUser(User $User): self
+    public function setUser(User $user): self
     {
-        $this->User = $User;
+        $this->user = $user;
 
         return $this;
     }
