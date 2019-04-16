@@ -8,7 +8,11 @@ Install and setup [Homestead](https://laravel.com/docs/5.8/homestead) for a Symf
 
 Run the following commands:
 ```bash
+homestead ssh
+cd ~/code
 composer install
 npm install
+bin/console doctrine:database:create
+bin/console doctrine:migrations:migrate
 ```
 
