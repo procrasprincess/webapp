@@ -45,7 +45,7 @@ class User implements UserInterface
     private $deletedAt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $profileImg;
 
