@@ -52,6 +52,8 @@
             {% block content %}{% endblock %}
         </main>
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        <script src="{{ asset('assets/scripts/base.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
