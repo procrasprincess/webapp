@@ -4,7 +4,7 @@
   "description": "Hotspots web application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css-build": "node-sass public/assets/sass/styles.scss public/assets/css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,9 @@
     "url": "https://github.com/cs691projecthotspots/webapp/issues"
   },
   "homepage": "https://github.com/cs691projecthotspots/webapp#readme",
-  "dependencies": {
-    "bulma": "^0.7.4"
+  "dependencies": {},
+  "devDependencies": {
+    "bulma": "^0.7.4",
+    "node-sass": "^4.11.0"
   }
 }
