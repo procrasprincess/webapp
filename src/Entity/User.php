@@ -80,7 +80,7 @@ class User implements UserInterface
     private $longitude;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Business", mappedBy="User", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Business", mappedBy="user", cascade={"persist", "remove"}))
      */
     private $business;
 
