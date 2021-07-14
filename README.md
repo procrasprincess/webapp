@@ -1,7 +1,7 @@
 # 🌴 Hotspots 🌴
 
 ## Description
-A web application created for capstone course of [Pace University's](https://www.pace.edu/) Masters in Computer Science program.
+A Hot Spots Web Application developed by Andrew L., Charles P., Kevin D., Sarah L., Bibin K., Shivangi, & Riya
 
 ## Before getting started
 This is a list of [topics](https://github.com/procrasprincess/webapp/blob/master/Prep_Hotspots.md) that should be reviewed and research before working on this project.
